@@ -2,42 +2,28 @@
 
 Promptly is an AI-powered web app that lets you generate simple websites from natural language prompts. Enter a description—Promptly creates a functional, ready-to-edit Next.js app for you in seconds.
 
-> 🔗 **Live Demo**: [jaibh-promptly.vercel.app](https://jaibh-promptly.vercel.app/)  
-> 🧠 **GitHub Repo**: [github.com/JaiBh/promptly](https://github.com/JaiBh/promptly)
-
-### Project origins:
-
-Promptly is based on this [tutorial by Coding with Antonio](https://www.youtube.com/watch?v=xs8mWnbMcmc), which covers building an AI-powered site generator in Next.js.
-
-My contributions include:
-
-- Adding a gallery page to showcase generated sites
-- Making the UI fully responsive for mobile and tablet
-- Implementing the ability to delete AI-generated projects
-
 ---
 
 ## 🧰 Tech Stack
 
-- **Framework**: [Next.js 15 (App Router)](https://nextjs.org/)
-- **Frontend**: [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [ShadCN UI](https://ui.shadcn.com/)
+- **Framework**: Next.js 15 (App Router)
+- **Frontend**: React, Tailwind CSS
+- **UI Components**: Radix UI
 - **Type Safety**: TypeScript
-- **Authentication**: [Clerk](https://clerk.com/)
-- **Billing**: [Clerk Billing](https://clerk.com/billing)
-- **AI Generation**: [OpenAI API](https://openai.com/)
-- **Background Jobs**: [Inngest](https://www.inngest.com/)
-- **Sandboxed Code Execution**: [E2B](https://e2b.dev/)
+- **Authentication**: Clerk
+- **Billing**: Clerk Billing
+- **AI Generation**: Gemini API
+- **Background Jobs**: Inngest
+- **Sandboxed Code Execution**: E2B
 - **Backend**: Next.js API Routes
-- **Database**: PostgreSQL via [Prisma ORM](https://www.prisma.io/)
-- **Hosting**: [Vercel](https://vercel.com/)
+- **Database**: PostgreSQL via Prisma ORM
 
 ---
 
 ## ⚙️ Features
 
 - 🔐 User Authentication (via Clerk)
-- 🤖 AI Website Generation from natural language prompts (via OpenAI)
+- 🤖 AI Website Generation from natural language prompts (via Gemini API)
 - 💡 Suggested Prompts for instant inspiration
 - 🖼️ Example Gallery showcasing real generated sites
 - 👀 Live Preview & Code Viewer for generated sites
@@ -52,7 +38,7 @@ My contributions include:
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/JaiBh/promptly.git
+git clone https://github.com/adnanhussain8082/promptly.git
 cd promptly
 ```
 
@@ -87,7 +73,7 @@ npm run dev
 │   │   ├── gallery/       # Gallery page routes
 │   │   └── projects/      # Project-specific routes
 │   ├── components/        # Reusable React UI components
-│   │   └── ui/            # UI primitives (buttons, inputs, etc. from ShadCN)
+│   │   └── ui/            # UI primitives (buttons, inputs, etc.)
 │   ├── generated/         # Auto-generated code (e.g. Prisma types)
 │   ├── hooks/             # Custom React hooks
 │   ├── inngest/           # Inngest event/workflow handlers
@@ -111,8 +97,8 @@ Create a `.env` file in the root directory and include:
 DATABASE_URL=...
 NEXT_PUBLIC_APP_URL=...
 
-# openai
-OPENAI_API_KEY=..
+# gemini
+GEMINI_API_KEY=..
 
 # e2b
 E2B_API_KEY=...
@@ -124,63 +110,13 @@ NEXT_PUBLIC_CLERK_SIGN_IN_URL="/sign-in"
 NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL="/"
 NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL="/"
 NEXT_PUBLIC_CLERK_SIGN_UP_URL="/sign-up"
-
 ```
-
----
-
-## 🧑‍💻 Author
-
-Built by [**Jai Bhullar**](https://jaibh-portfolio.vercel.app/) – aspiring front-end/full-stack developer based near London.
-
-- 📫 Email: jaibhullar.developer@outlook.com
-- 🔗 **LinkedIn:** [linkedin.com/in/jai-bhullar-dev](https://www.linkedin.com/in/jai-bhullar-dev)
-- 📄 [View My CV](https://drive.google.com/drive/folders/11INqiG1lzqst5JbgNXueFMdqKZr6JfP9?usp=sharing)
 
 ---
 
 ## 📝 License
 
 MIT License. Feel free to use, modify, or contribute!
-
----
-
-# Promptly
-
-Promptly is a modern web application built with Next.js, Prisma, Clerk authentication, and Radix UI components. It provides a robust platform for prompt management, user authentication, and project organization.
-
-## Features
-- Next.js 15 with Turbopack for fast development
-- Prisma ORM for database management
-- Clerk for authentication
-- Radix UI for accessible components
-- TRPC for type-safe APIs
-- Tailwind CSS for styling
-
-## Getting Started
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/adnanhussain8082/promptly.git
-   ```
-2. Install dependencies:
-   ```sh
-   npm install
-   ```
-3. Set up your `.env` file with required environment variables (see `.env.example`).
-4. Run the development server:
-   ```sh
-   npm run dev
-   ```
-
-## Environment Variables
-- `DATABASE_URL`: Your database connection string
-- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`: Clerk publishable key
-- `CLERK_SECRET_KEY`: Clerk secret key
-- `NEXT_PUBLIC_INNGEST_EVENT_KEY`: Inngest event key
-- `INNGEST_SIGNING_KEY`: Inngest signing key
-
-## License
-MIT
 
 ---
 **Note:** Do not commit your `.env` file to GitHub. It is already included in `.gitignore` for security.
